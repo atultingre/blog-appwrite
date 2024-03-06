@@ -6,11 +6,11 @@ import authService from "../../appwrite/auth";
 import { login } from "../../store/authSlice";
 import { Button, Input, Logo } from "../index";
 
-const Signup = () => {
+function Signup() {
   const navigate = useNavigate();
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
-  const [error, setError] = useState("");
 
   const create = async (data) => {
     setError("");
@@ -18,7 +18,6 @@ const Signup = () => {
       const userData = await authService.createAccount(data);
       if (userData) {
         const userData = await authService.getCurrentUser();
-
         if (userData) dispatch(login(userData));
         navigate("/");
       }
@@ -89,6 +88,6 @@ const Signup = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Signup;

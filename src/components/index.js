@@ -12,8 +12,23 @@ import Signup from "./auth/Signup";
 import Protected from "./auth/Protected";
 import RTE from "./reusable/RTE";
 import PostForm from "./post-form/PostForm";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import AddPost from "./pages/AddPost";
+import AllPosts from "./pages/AllPosts";
+import EditPost from "./pages/EditPost";
+import Home from "./pages/Home";
+import Post from "./pages/Post";
+
 
 export {
+  Post,
+  Home,
+  EditPost,
+  AllPosts,
+  AddPost,
+  SignupPage,
+  LoginPage,
   Footer,
   Header,
   Logo,

@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import authService from "../../appwrite/auth";
 import { Button, Input, Logo } from "../index";
 
-const Login = () => {
+function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
@@ -80,6 +80,6 @@ const Login = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Login;

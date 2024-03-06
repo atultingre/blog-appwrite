@@ -20,15 +20,14 @@ export class AuthService {
         password,
         name
       );
-
       if (userAccount) {
-        // Call anoter method
+        // call another method
         return this.login({ email, password });
       } else {
         return userAccount;
       }
     } catch (error) {
-      console.log("Appwrite service :: signup :: error", error);
+      throw error;
     }
   }
 
@@ -36,7 +35,7 @@ export class AuthService {
     try {
       return await this.account.createEmailSession(email, password);
     } catch (error) {
-      console.log("Appwrite service :: login :: error", error);
+      throw error;
     }
   }
 
@@ -44,7 +43,7 @@ export class AuthService {
     try {
       return await this.account.get();
     } catch (error) {
-      console.log("Appwrite service :: getUser :: error", error);
+      console.log("Appwrite serive :: getCurrentUser :: error", error);
     }
 
     return null;
@@ -54,7 +53,7 @@ export class AuthService {
     try {
       await this.account.deleteSessions();
     } catch (error) {
-      console.log("Appwrite service :: logout :: error", error);
+      console.log("Appwrite serive :: logout :: error", error);
     }
   }
 }
