@@ -10,6 +10,8 @@ import PostCard from "./reusable/PostCard";
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
 import Protected from "./auth/Protected";
+import RTE from "./reusable/RTE";
+import PostForm from "./post-form/PostForm";
 
 export {
   Footer,
@@ -24,4 +26,6 @@ export {
   Login,
   Signup,
   Protected,
+  RTE,
+  PostForm,
 };
